@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <meta name="description" content="App" />
+    <meta name="keywords" content="app" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <script>
+      if (typeof Promise === "undefined")
+        document.write(
+          '<script src="https://unpkg.com/bluebird@3.7.2/js/browser/bluebird.core.min.js"><\/script>'
+        );
+      if (typeof fetch === "undefined")
+        document.write(
+          '<script src="https://unpkg.com/whatwg-fetch@3.4.1/dist/fetch.umd.js"><\/script>'
+        );
+    </script>
+
+    <script src="https://unpkg.com/core-js-bundle/minified.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+    <meta name="importmap-type" content="systemjs-importmap" />
+
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+        }
+      }
+    </script>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.10.2/system.min.js"
+      integrity="sha512-q8mW8h6inMCO7EwhzsalSSa2wxgUhZq7EYa37ZxIkqgrd/oOI5tO9+E42Hq+4zq3pSb6pkf+tJAXWckjxHdLZw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es5/rxjs.min.js",
+          "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/es5/rxjs-operators.min.js",
+          "@test/state": "http://localhost:4300/state/index.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>isolated</p>
+    <app-root></app-root>
+  </body>
+</html>
